@@ -6,9 +6,9 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    {{ __('Products') }} &nbsp;&nbsp;
+                    {{ __('Companies') }} &nbsp;&nbsp;
                     @role('admin')
-                        <a class="btn btn-primary" href="/create-product" role="button">CREATE PRODUCT</a>
+                        <a class="btn btn-primary" href="/create-company" role="button">CREATE COMPANY</a>
                     @endrole
                 </div>
 
@@ -23,22 +23,18 @@
                             {{ session('success') }}
                         </div>
                     @endif
-                    @if (count($products) > 0)
+                    @if (count($companies) > 0)
                         <table class="table table-striped table-sm">
                             <thead>
                                 <tr>
                                     <th scope="col">Name</th>
-                                    <th scope="col">Type</th>
-                                    <th scope="col">Company</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($products as $product)
-                                <tr>
-                                    <th><a class="nav-link" href="product-reviews/{{$product->id}}"> {{$product->name}} </a></th>
-                                    <td>{{$product->type}}</td>
-                                    <th><a class="nav-link" href="view-company/{{$product->company->id}}"> {{$product->company->name}} </a></th>
-                                </tr>
+                                @foreach ($companies as $company)
+                                    <tr>
+                                        <th><a class="nav-link" href="view-company/{{$company->id}}"> {{$company->name}} </a></th>
+                                    </tr>
                                 @endforeach  
                             </tbody>
                         </table>

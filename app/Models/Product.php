@@ -8,9 +8,10 @@ class Product extends Model
 {
     protected $table = 'products';
 
-    protected $fillable = [
-        'product_id', 'user_id', 'rating', 'review',
-    ];
+    public function company()
+    {
+        return $this->belongsTo(Company::class);
+    }
 
     public function reviews()
     {

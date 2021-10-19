@@ -26,12 +26,14 @@
                             </div>
                             <div class="card-body">
                                 <p>{{$review->review}}</p>
-                                <form method="POST" action="/delete-review/{{$review->id}}">
-                                    @csrf
-                                    <button type="submit" class="btn btn-danger">
-                                        {{ __('DELETE') }}
-                                    </button>
-                                </form>
+                                @auth
+                                    <form method="POST" action="/delete-review/{{$review->id}}">
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger">
+                                            {{ __('DELETE') }}
+                                        </button>
+                                    </form>
+                                @endauth
                             </div>
                           </div><br>
                         @endforeach  

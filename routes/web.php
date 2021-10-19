@@ -16,8 +16,6 @@ Auth::routes();
 
 Route::get('/', 'ProductController@index');
 
-Route::get('/home', 'ProductController@index');
-
 Route::get('/create-product', 'ProductController@create');
 
 Route::post('/save-product', 'ProductController@store');
@@ -27,3 +25,11 @@ Route::get('/product-reviews/{id}', 'ReviewController@show');
 Route::post('/create-review/{id}', 'ReviewController@store');
 
 Route::post('/delete-review/{id}', 'ReviewController@delete');
+
+Route::get('/companies', 'CompanyController@index');
+
+Route::get('/create-company', 'CompanyController@create');
+
+Route::post('/save-company', 'CompanyController@store');
+
+Route::get('/view-company/{id}', 'CompanyController@show');
