@@ -1,8 +1,7 @@
-## Installation
+## Installation commands
 
-- run these two commands
-  npm install
-  composer install
+- npm install
+- composer install
 
 ## Database
 
