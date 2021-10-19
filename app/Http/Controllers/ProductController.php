@@ -8,10 +8,13 @@ use App\Models\Company;
 
 class ProductController extends Controller
 {
-
     public function index() {
         $products = Product::with('company')->get();
         return view('pages.home', compact('products'));
+    }
+
+    public function show($id) {
+        return Product::where('id',$id)->with('company', 'reviews')->first();
     }
 
     public function create() {

@@ -15,16 +15,4 @@ use Illuminate\Support\Facades\DB;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
-Route::get('/checkdbcon', function () {
-    try {
-        DB::connection()->getPdo();
-        DB::connection()->getDatabaseName();
-        echo "Successfully connected to the DB: " . DB::connection()->getDatabaseName();
-    } catch (\Exception $e) {
-        die($e->getMessage());
-    }
-});
+Route::get('/products/{id}', 'ProductController@show');
