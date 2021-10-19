@@ -25,3 +25,5 @@ Route::post('/save-product', 'ProductController@store');
 Route::get('/product-reviews/{id}', 'ReviewController@show');
 
 Route::post('/create-review/{id}', 'ReviewController@store');
+
+Route::post('/delete-review/{id}', 'ReviewController@delete');

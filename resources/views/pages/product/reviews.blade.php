@@ -25,7 +25,13 @@
                               Rating : {{$review->rating}}
                             </div>
                             <div class="card-body">
-                                {{$review->review}}
+                                <p>{{$review->review}}</p>
+                                <form method="POST" action="/delete-review/{{$review->id}}">
+                                    @csrf
+                                    <button type="submit" class="btn btn-danger">
+                                        {{ __('DELETE') }}
+                                    </button>
+                                </form>
                             </div>
                           </div><br>
                         @endforeach  
